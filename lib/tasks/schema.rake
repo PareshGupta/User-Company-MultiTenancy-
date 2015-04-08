@@ -1,5 +1,6 @@
 db_namespace = namespace :db do
   namespace :schema do
+    task(:dump).clear
 
     desc 'Create a db/schema.rb file that is portable against any DB supported by AR'
     task :dump => [:environment, :load_config] do

@@ -1,4 +1,4 @@
-class CreateCompany < ActiveRecord::TenantMigration
+class CreateCompany < ActiveRecord::OwnerMigration
   def change
     create_table :companies do |t|
       t.string :name

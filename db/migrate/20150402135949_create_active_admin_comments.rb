@@ -1,4 +1,4 @@
-class CreateActiveAdminComments < ActiveRecord::TenantMigration
+class CreateActiveAdminComments < ActiveRecord::OwnerMigration
   def self.up
     create_table :active_admin_comments do |t|
       t.string :namespace

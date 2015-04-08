@@ -10,12 +10,12 @@ class Company < ActiveRecord::Base
   private
 
     def create_schema
-      ActiveRecord::Base.connection.execute("create schema #{ subdomain };")
-      # set_search_path
+      connection.execute("create schema #{ subdomain };")
+      connection.execute("set search_path to #{subdomain};")
+      connection.initialize_schema_migrations_table
     end
 
     # def set_search_path
-    #   ActiveRecord::Base.connection.execute("set search_path to #{subdomain};")
     #   load_tables
     # end
 
