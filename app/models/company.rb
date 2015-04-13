@@ -10,9 +10,10 @@ class Company < ActiveRecord::Base
   private
 
     def create_schema
-      connection.execute("create schema #{ subdomain };")
-      connection.execute("set search_path to #{subdomain};")
-      connection.initialize_schema_migrations_table
+      ActiveRecord::Base.connection.execute("create schema #{ subdomain };")
+      ActiveRecord::Base.connection.execute("set search_path to #{subdomain};")
+      ActiveRecord::Base.connection.initialize_schema_migrations_table
+      restore_default_search_path
     end
 
     # def set_search_path
@@ -24,9 +25,9 @@ class Company < ActiveRecord::Base
     #   restore_default_search_path
     # end
 
-    # def restore_default_search_path
-    #   ActiveRecord::Base.connection.execute('set search_path to public;')
-    # end
+    def restore_default_search_path
+      ActiveRecord::Base.connection.execute('set search_path to public;')
+    end
 
     def delete_schema
       ActiveRecord::Base.connection.execute("drop schema #{subdomain}")
