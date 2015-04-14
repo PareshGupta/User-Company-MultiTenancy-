@@ -10,6 +10,7 @@ gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
 gem 'activeadmin', github: 'activeadmin'
+
 gem 'devise'
 
 group :development, :test do

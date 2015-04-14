@@ -4,12 +4,12 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Multi Tenant App"
+  config.site_title = "Multi-Tenant App"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
-  # config.site_title_link = "/"
+  config.site_title_link = "/"
 
   # Set an optional image to be displayed for the header
   # instead of a string (overrides :site_title)
@@ -230,4 +230,25 @@ ActiveAdmin.setup do |config|
   # You can enable or disable them for all resources here.
   #
   # config.filters = true
+
+  # config.namespace :admin do |admin|
+  #   admin.build_menu do |menu|
+  #     menu.add label: 'Blog', priority: 0
+  #   end
+  # end
+
+  # config.namespace :admin do |admin|
+  #   admin.build_menu do |menu|
+  #     menu.add label: "The Application", url: "/", priority: 0
+
+  #     menu.add label: "Sites" do |sites|
+  #       sites.add label: "Google",   url: "http://google.com", html_options: { target: :blank }
+  #       sites.add label: "Facebook", url: "http://facebook.com"
+  #       sites.add label: "Github",   url: "http://github.com"
+  #     end
+  #   end
+  # end
+
+    # config.comments = false
+  
 end
