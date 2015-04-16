@@ -1,5 +1,5 @@
 ActiveAdmin.register Company do
-  permit_params :name, :industry_type, :description, :subdomain, owner_attributes: [:name, :email, :password, :password_confirmation]
+  permit_params :name, :industry_type, :description, :subdomain, owner_attributes: [:name, :email, :password, :password_confirmation, :owner]
 
   config.comments = false
 
@@ -40,17 +40,14 @@ ActiveAdmin.register Company do
         f.semantic_fields_for :owner, f.object.owner || f.object.build_owner do |owner|
           owner.input :name
           owner.input :email
-          owner.input :password, hint: '(minimum 8 characters)'
+          owner.input :password, hint: '(minimum 6 characters)'
           owner.input :password_confirmation
+          owner.input :owner, as: :boolean, input_html: { checked: 'checked' } 
         end
       end
 
       f.actions
     end
   end
-
-  # sidebar :help do
-  #   "Need help? Email us at help@example.com"
-  # end
 
 end

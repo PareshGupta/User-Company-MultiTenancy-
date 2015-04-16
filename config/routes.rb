@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :people
+  devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
+
+  resources :users
+
   ActiveAdmin.routes(self)
 
-  devise_scope :admin_user do
-    root 'active_admin/devise/sessions#new'
+  devise_scope :user do
+    root 'devise/sessions#new'
   end
 
 end

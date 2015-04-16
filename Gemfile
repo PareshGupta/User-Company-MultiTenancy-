@@ -12,10 +12,12 @@ gem 'jquery-rails'
 gem 'activeadmin', github: 'activeadmin'
 
 gem 'devise'
+gem 'devise_invitable'
 
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'quiet_assets'
+  gem 'letter_opener'
 end
 

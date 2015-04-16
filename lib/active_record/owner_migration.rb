@@ -7,7 +7,6 @@
 #     end
 
 #     def migrate(direction)
-#       debugger
 #       set_search_path
 #       super
 #     end
