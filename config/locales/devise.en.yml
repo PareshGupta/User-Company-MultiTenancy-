@@ -2,6 +2,10 @@
 
 en:
   devise:
+    user_invitations:
+      user:
+        send_instructions: 'Invitation has been sent to the user.'
+        updated: 'Successfully Signed In and accepted the invitation'
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
