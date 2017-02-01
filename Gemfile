@@ -12,6 +12,9 @@ gem 'jquery-rails'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 
+gem 'thredded', '~> 0.9.4'
+gem 'letter_opener'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
